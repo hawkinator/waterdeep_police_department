@@ -2,13 +2,89 @@
 <html>
   <head>
     <title>New WDPD homepage</title>
+	<style>
+	body {background-color: skyblue;}
+	/* CSS */
+	.button-link {
+		display: inline-block;
+		padding: 15px 20px;
+		background-color: slategray;
+		color: white;
+		text-decoration: none; /* Removes the underline */
+		border-radius: 5px;
+		text-align: center;
+		font-family: sans-serif;
+	}
+
+	.button-link:hover {
+		background-color: #0056b3; /* Darkens on hover */
+	}
+	</style>
   </head>
   <body>
     <div>
         <h1>Waterdeep Police Department Session Recaps</h1>
-        <p><a href="https://docs.google.com/document/d/14qtsTQVhSNHgdzdyxnAGwI5LEqU16YDDHfekpoc_Mq0/edit?usp=drive_link">Episode 1 Barfight at the Prancing Beholder 19 Eleint 1576</a></p>
-        <p><a href="https://docs.google.com/document/d/1y8X9AMz38N63EQUkut8-k7dfg_IH1ySjRAxTSTnDw8E/edit?usp=drive_link">Episode 2 Health Code Violations 26 Eleint 1576</a></p>
-        <p><a href="https://docs.google.com/document/d/14qtsTQVhSNHgdzdyxnAGwI5LEqU16YDDHfekpoc_Mq0/edit?usp=drive_link">Episode 3 Warehouse Gang Hideout 9 Marpenoth 1576</a></p>
+		<p id="date"></p>
+        <a href="https://docs.google.com/document/d/14qtsTQVhSNHgdzdyxnAGwI5LEqU16YDDHfekpoc_Mq0/edit?usp=drive_link" class="button-link">Episode 1 Barfight at the Prancing Beholder 19 Eleint 1576</a><br><br>
+        <a href="https://docs.google.com/document/d/1y8X9AMz38N63EQUkut8-k7dfg_IH1ySjRAxTSTnDw8E/edit?usp=drive_link" class="button-link">Episode 2 Health Code Violations 26 Eleint 1576</a><br><br>
+        <a href="https://docs.google.com/document/d/1CmwgnrcpNyXqvkUqNPXiVIGaO3AbCZLpyVZZN5YyRu0/edit?usp=drive_link" class="button-link">Episode 3 Warehouse Gang Hideout 9 Marpenoth 1576</a>
     </div>
   </body>
+  <script>
+	const date = new Date();
+	const harptosYear = date.getFullYear() - 450;
+	const isLeapYear = (date.getFullYear() % 4 === 0);
+	let monthNum = date.getMonth() + 1;
+	let dayNum = date.getDate();
+	let harptosMonth = "";
+	if (isLeapYear == false) {
+		if (monthNum == 4 || monthNum == 6 || monthNum == 7 || monthNum == 8 || monthNum == 10 || monthNum == 12) {
+			dayNum = dayNum - 1;
+			if (dayNum < 1) {
+				if (monthNum == 4 || monthNum == 6 || monthNum == 7) {
+					dayNum = 30;
+				} else if (monthNum == 9 || monthNum == 10 || monthNum == 12) {
+					dayNum = 31;
+				}
+				monthNum = monthNum - 1;
+			}
+		} else if (monthNum == 3 || monthNum == 5) {
+			dayNum = dayNum - 2;
+			if (dayNum < 1) {
+				if (monthNum == 3) {
+					dayNum = dayNum + 30;
+				} else {
+					dayNum = dayNum + 31;
+				}
+			monthNum = monthNum - 1;
+			}
+		}
+	}
+	if (monthNum == 1) {
+		harptosMonth = "Hammer";
+	} else if (monthNum == 2) {
+		harptosMonth = "Alturiak";
+	} else if (monthNum == 3) {
+		harptosMonth = "Ches";
+	} else if (monthNum == 4) {
+		harptosMonth = "Tarsakh";
+	} else if (monthNum == 5) {
+		harptosMonth = "Mirtul";
+	} else if (monthNum == 6) {
+		harptosMonth = "Kythorn";
+	} else if (monthNum == 7) {
+		harptosMonth = "Flamerule";
+	} else if (monthNum == 8) {
+		harptosMonth = "Eleasis";
+	} else if (monthNum == 9) {
+		harptosMonth = "Eleint";
+	} else if (monthNum == 10) {
+		harptosMonth = "Marpenoth";
+	} else if (monthNum == 11) {
+		harptosMonth = "Uktar";
+	} else if (monthNum == 12) {
+		harptosMonth = "Nightal";
+	}
+	document.getElementById("date").innerHTML = dayNum + " " + harptosMonth + ", " + harptosYear;
+  </script>
 </html>
