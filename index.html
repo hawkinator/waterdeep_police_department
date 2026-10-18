@@ -9,26 +9,28 @@
 		/* Prevents the image from repeating like a tile grid */
 		background-repeat: no-repeat;     
 		/* Scales the image to cover the entire viewport without stretching */
-		background-size: cover;
+		background-size: contain;
 		/* Centers the image horizontally and vertically */
-		background-position: center;
+		background-position: center top;
 		/* Keeps the background fixed in place when scrolling */
 		background-attachment: fixed;
 		/* Fallback background color if the image fails to load */
-		background-color: #f0f0f0;
+		background-color: skyblue;
 		/* Removes browser default margins */
 		margin: 0;
 		text-align: center;
     }
 	h1 {
 		color: white;
-		background-color: #70809080;
 		text-align: center;
 	}
 	p {
 		color: white;
-		background-color: #70809080;
 		text-align: center;
+	}
+	.textWrap {
+		background-color: #708090b0;
+		padding: 5px 16px;
 	}
 	.button-link {
 		display: inline-block;
@@ -38,7 +40,6 @@
 		text-decoration: none; /* Removes the underline */
 		border-radius: 5px;
 		text-align: center;
-		font-family: sans-serif;
 	}
 
 	.button-link:hover {
@@ -48,8 +49,8 @@
   </head>
   <body>
     <div>
-        <h1>Waterdeep Police Department Session Recaps</h1>
-		<p id="date"></p>
+        <h1><span class="textWrap">Waterdeep Police Department Session Recaps</span></h1>
+		<p><span class="textWrap" id="date"></span></p>
         <a href="https://docs.google.com/document/d/14qtsTQVhSNHgdzdyxnAGwI5LEqU16YDDHfekpoc_Mq0/edit?usp=drive_link" class="button-link">Episode 1 Barfight at the Prancing Beholder 19 Eleint 1576</a><br><br>
         <a href="https://docs.google.com/document/d/1y8X9AMz38N63EQUkut8-k7dfg_IH1ySjRAxTSTnDw8E/edit?usp=drive_link" class="button-link">Episode 2 Health Code Violations 26 Eleint 1576</a><br><br>
         <a href="https://docs.google.com/document/d/1CmwgnrcpNyXqvkUqNPXiVIGaO3AbCZLpyVZZN5YyRu0/edit?usp=drive_link" class="button-link">Episode 3 Warehouse Gang Hideout 9 Marpenoth 1576</a>
