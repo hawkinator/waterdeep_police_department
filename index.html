@@ -3,12 +3,31 @@
   <head>
     <title>New WDPD homepage</title>
 	<style>
-	body {background-color: skyblue;}
-	/* CSS */
+	body {
+		/* The image path goes here */
+		background-image: url('WDPDrecruitposter.png'); 
+		/* Prevents the image from repeating like a tile grid */
+		background-repeat: no-repeat;     
+		/* Scales the image to cover the entire viewport without stretching */
+		background-size: cover;
+		/* Centers the image horizontally and vertically */
+		background-position: center;
+		/* Keeps the background fixed in place when scrolling */
+		background-attachment: fixed;
+		/* Fallback background color if the image fails to load */
+		background-color: #f0f0f0;
+		/* Removes browser default margins */
+		margin: 0; 
+    }
+	h1 {
+		color: white;
+		background-color: #70809080;
+		text-align: center;
+	}
 	.button-link {
 		display: inline-block;
 		padding: 15px 20px;
-		background-color: slategray;
+		background-color: #70809080;
 		color: white;
 		text-decoration: none; /* Removes the underline */
 		border-radius: 5px;
